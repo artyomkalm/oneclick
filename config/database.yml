@@ -1,0 +1,25 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: sb_dev
+  pool: 5
+  username: artkalm
+  password: qwerty22
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: sb_test
+  pool: 5
+  username: artkalm
+  password: qwerty22
+
+production:
+  adapter:  postgresql
+  encoding: unicode
+  host:     
+  database: sb_production
+  pool: 5
+  username: artkalm
+  password: <%= ENV['SMALLBUTTERFLY_DATABASE_PASSWORD'] %>
