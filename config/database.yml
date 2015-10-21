@@ -18,7 +18,7 @@ test:
 production:
   adapter:  postgresql
   encoding: unicode
-  host: 10.7.50.120   
+  host:     localhost 
   database: sb_production
   pool: 5
   username: artkalm
