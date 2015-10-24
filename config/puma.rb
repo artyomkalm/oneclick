@@ -7,7 +7,7 @@ daemonize true
 stdout_redirect "#{root}/log/access.log", "#{root}/log/errors.log", true
 
 environment ENV['RAILS_ENV'] || 'production'
-pidfile "#{root}/tmp/pids/puma.pid"
+pidfile '/tmp/smallbutterfly.pid'
 state_path "#{root}/tmp/puma.state"
 rackup "#{root}/config.ru"
 
