@@ -29,7 +29,7 @@ set :deploy_to, '/var/www/smallbutterfly'
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
 # Default value for default_env is {}
-set :default_env, { path: "~/lib64/gems/ruby:$PATH" }
+set :default_env, { path: "~/.gems/ruby:$PATH" }
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
@@ -45,24 +45,4 @@ namespace :deploy do
     end
   end
 
-end
-
-namespace :puma do
-  desc 'Start the application'
-  task :start do
-    queue 'echo "-----> Start Puma"'
-    queue "cd #{app_path} && RAILS_ENV=#{stage} && bin/puma.sh start" , :pty => false
-  end
-
-  desc 'Stop the application'
-  task :stop do
-    queue 'echo "-----> Stop Puma"'
-    queue "cd #{app_path} && RAILS_ENV=#{stage} && bin/puma.sh stop"
-  end
-
-  desc 'Restart the application'
-  task :restart do
-    queue 'echo "-----> Restart Puma"'
-    queue "cd #{app_path} && RAILS_ENV=#{stage} && bin/puma.sh restart"
-  end
 end
