@@ -32,7 +32,7 @@ set :deploy_to, '/var/www/smallbutterfly'
 set :default_env, { path: "~/.gems/ruby:$PATH" }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 1
 
 namespace :deploy do
 

@@ -1,6 +1,7 @@
 root = "/var/www/smallbutterfly/current"
 
 bind "unix:///var/www/smallbutterfly/current/tmp/smallbutterfly.sock"
+bind 'tcp://0.0.0.0:3061'
 
 daemonize true
 stdout_redirect "#{root}/log/access.log", "#{root}/log/errors.log", true
