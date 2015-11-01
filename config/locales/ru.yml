@@ -1,0 +1,43 @@
+ru:
+  title: "Тестовый сайт"
+  subtitle: "подзаголовок" 
+  simple_captcha:
+    placeholder: Код защиты
+    label: ''
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%e %b"
+      long: "%e %B %Y"
+      long_ordinal: "%e %B %Y"
+      only_day: "%e"
+  time:
+    formats:
+      long: '%d.%m.%Y %H:%M:%S'
+  activerecord:
+    models:
+      admin_user:
+        one: Администратор
+        few: Администратора
+        many: Администраторов
+        other: Администраторы
+      user:
+        one: Пользователь
+        few: Пользователя
+        many: Пользователей
+        other: Пользователи
+    attributes:
+      admin_user:
+        access_token: Ключ доступа
+      user:
+        email: Электронная почта
+        password: Пароль
+  views:
+    pagination:
+      first: "&laquo; Первая"
+      last: "Последняя &raquo;"
+      previous: "&lsaquo; Пред."
+      next: "След. &rsaquo;"
+      truncate: "..."
+  errors:
+    emails_not_empty: Укажите хотя бы один Email для рассылки
