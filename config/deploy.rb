@@ -8,7 +8,7 @@ set :repo_url, 'https://github.com/artyomkalm/smallbuttefly.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/var/www/smallbutterfly'
+set :deploy_to, '/srv/www/smallbutterfly'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -29,7 +29,7 @@ set :deploy_to, '/var/www/smallbutterfly'
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
 # Default value for default_env is {}
-set :default_env, { path: "~/.gems/ruby:$PATH" }
+set :default_env, { path: "~/.gems/ruby:/usr/local/bin:$PATH" }
 
 # Default value for keep_releases is 5
 set :keep_releases, 1
