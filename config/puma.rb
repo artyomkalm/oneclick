@@ -1,13 +1,13 @@
-root = "/var/www/smallbutterfly/current"
+rails_env = ENV['RAILS_ENV'] || 'production'
 
-bind "unix:///var/www/smallbutterfly/current/tmp/smallbutterfly.sock"
-bind 'tcp://0.0.0.0:3061'
+bind "unix:///srv/www/smallbutterfly/current/tmp/smallbutterfly.sock"
+pidfile "/srv/www/smallbutterfly/current/tmp/puma.pid"
+state_path "/srv/www/smallbutterfly/current/tmp/puma/state"
 
 daemonize true
-stdout_redirect "#{root}/log/access.log", "#{root}/log/errors.log", true
+stdout_redirect "/srv/www/smallbutterfly/current/log/access.log", "/srv/www/smallbutterfly/current/log/errors.log", true
 
-environment ENV['RAILS_ENV'] || 'production'
-pidfile '#{root}/tmp/smallbutterfly.pid'
-
-threads 2, 16
+threads 4, 4
 workers 2
+
+activate_control_app

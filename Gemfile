@@ -19,6 +19,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'simple_form'
 
+gem 'gmaps4rails', '~> 2.1', '>= 2.1.2'
+gem 'geocoder', '~> 1.2', '>= 1.2.12'
+
 gem 'russian'
 gem 'devise'
 gem 'activeadmin', '~> 1.0.0.pre2'
