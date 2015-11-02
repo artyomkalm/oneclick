@@ -1,0 +1,27 @@
+p#notice = notice
+
+p
+  strong Пользователь:
+  = @appartment.user_id
+p
+  strong Город:
+  = @appartment.city.name
+p
+  strong Улица:
+  = @appartment.street.name
+p
+  strong Комплекс:
+  = @appartment.lq_id
+p
+  strong Дом по улице:
+  = @appartment.house.number_street
+p
+  strong Дом по комплексу:
+  = @appartment.house.number_lq
+p
+  strong Номер квартиры:
+  = @appartment.number_code
+
+= link_to 'Редактировать', edit_appartment_path(@appartment)
+'|
+= link_to 'Назад', appartments_path

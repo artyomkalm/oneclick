@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151021133058) do
+ActiveRecord::Schema.define(version: 20151102130419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,57 @@ ActiveRecord::Schema.define(version: 20151021133058) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "appartments", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "city_id",    null: false
+    t.integer  "street_id"
+    t.integer  "lq_id"
+    t.integer  "house_id"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "name",       limit: 20, null: false
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "cities", ["name"], name: "index_cities_on_name", unique: true, using: :btree
+
+  create_table "houses", force: :cascade do |t|
+    t.integer  "street_id"
+    t.integer  "lq_id"
+    t.string   "number_street"
+    t.string   "number_lq"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "lqs", force: :cascade do |t|
+    t.integer  "city_id",                null: false
+    t.string   "number_code", limit: 20, null: false
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "streets", force: :cascade do |t|
+    t.integer  "city_id",               null: false
+    t.string   "name",       limit: 60, null: false
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                                null: false

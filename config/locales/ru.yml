@@ -21,6 +21,31 @@ ru:
         few: Администратора
         many: Администраторов
         other: Администраторы
+      appartment:
+        one: Квартира
+        few: Квартир
+        many: Квартир
+        other: Квартиры
+      city:
+        one: Город
+        few: Городов
+        many: Городов
+        other: Города
+      house:
+        one: Дом
+        few: Домов
+        many: Домов
+        other: Дома
+      lq:
+        one: Комплекс
+        few: Комплексов
+        many: Комплексов
+        other: Комплекса
+      street:
+        one: Улица
+        few: Улиц
+        many: Улиц
+        other: Улицы
       user:
         one: Пользователь
         few: Пользователя
@@ -32,6 +57,54 @@ ru:
       user:
         email: Электронная почта
         password: Пароль
+      appartment:
+        user: Пользователь
+        user_id: Пользователь
+        city: Город
+        city_id: Город
+        street: Улица
+        street_id: Улица
+        lq: Комплекс
+        lq_id: Комплекс
+        house: Дом
+        house_id: Дом
+        created_at: Создано
+        updated_at: Изменено
+        latitude: Ширина
+        longitude: Долгота
+      city:
+        name: Название
+        created_at: Создано
+        updated_at: Изменено
+        latitude: Ширина
+        longitude: Долгота
+      house:
+        street: Улица
+        street_id: Улица
+        lq: Комплекс
+        lq_id: Комплекс
+        number_street: Номер (по улице)
+        number_lq: Номер (по комплексу)
+        created_at: Создано
+        updated_at: Изменено
+        latitude: Ширина
+        longitude: Долгота
+      lq:
+        number_code: Номер
+        city: Город
+        city_id: Город
+        created_at: Создано
+        updated_at: Изменено
+        latitude: Ширина
+        longitude: Долгота
+      street:
+        name: Название
+        city: Город
+        city_id: Город
+        created_at: Создано
+        updated_at: Изменено
+        latitude: Ширина
+        longitude: Долгота
   views:
     pagination:
       first: "&laquo; Первая"

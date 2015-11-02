@@ -1,0 +1,21 @@
+= simple_form_for(@appartment) do |f|
+  = f.error_notification
+
+  .form-inputs
+    .row
+      .col-md-6
+        = f.association :user
+        = f.association :city
+        .form-group.select.optional
+          label.select.optional.control-label  Улица
+          = f.select :street, Street.all.map { |s| [s.name, s.id, { :data => {:lat => s.latitude, :lng => s.longitude} }] }, class: "select optonal form-control"
+        = f.association :lq
+        = f.association :house
+        = f.input :latitude
+        = f.input :longitude
+      .col-md-6
+        #map style=("width:90%; height:450px;") 
+        #location LatLng(54.0, 82.0)
+
+  .form-actions
+    = f.button :submit

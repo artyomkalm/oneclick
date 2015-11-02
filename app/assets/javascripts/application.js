@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require api_2gis
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets

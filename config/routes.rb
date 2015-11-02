@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :houses
+  resources :lqs
+  resources :streets
+  resources :cities
+  resources :appartments
   get 'main/index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -8,7 +13,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'main#index'
+  root 'appartments#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
