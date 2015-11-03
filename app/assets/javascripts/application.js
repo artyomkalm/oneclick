@@ -30,3 +30,4 @@ $(document).ready(function() {
       $(this).addClass('on');
     }
   });
+});
