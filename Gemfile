@@ -26,6 +26,7 @@ gem 'russian'
 gem 'devise'
 gem 'activeadmin', '~> 1.0.0.pre2'
 
+gem 'rename'
 # gem 'roo'
 
 # gem 'bcrypt', '~> 3.1.7'
@@ -43,4 +44,5 @@ group :development do
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-bundler', '~> 1.1.2'
   gem 'capistrano-puma', :require => false
+  gem 'capistrano-precompile-on-local'
 end
