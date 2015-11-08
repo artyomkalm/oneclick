@@ -26,31 +26,131 @@ ru:
         few: Квартир
         many: Квартир
         other: Квартиры
+      building_class:
+        one: Класс здания
+        few: Класса здания
+        many: Классов здания
+        other: Классы здания
+      building_state:
+        one: Состояние дома
+        few: Состояния дома
+        many: Состояний дома
+        other: Состояния дома
+      building_type:
+        one: Тип дома
+        few: Типа дома
+        many: Типов дома
+        other: Типы дома
       city:
         one: Город
         few: Городов
         many: Городов
         other: Города
+      city_region:
+        one: Район
+        few: Района
+        many: Районов
+        other: Районы
+      construction_phase: 
+        one: Этап строительства
+        few: Этапа строительства
+        many: Этапов строительства
+        other: Этапы строительства
+      deal_type:
+        one: Тип сделки
+        few: Типов сделки
+        many: Типов сделки
+        other: Тип сделки
+      electric_type:
+        one: Электроснабжение
+        few: Электроснабжение
+        many: Электроснабжение
+        other: Электроснабжение
+      garbage_type:
+        one: Мусороотделение
+        few: Мусороотделение
+        many: Мусороотделение
+        other: Мусороотделение
+      gas_type:
+        one: Газоснабжение
+        few: Газоснабжение
+        many: Газоснабжение
+        other: Газоснабжение
+      heating_type:
+        one: Отопление / ГВС
+        few: Отопление / ГВС
+        many: Отопление / ГВС
+        other: Отопление / ГВС
       house:
         one: Дом
         few: Домов
         many: Домов
         other: Дома
+      infrastructure_object: 
+        one: Инфаструктура
+        few: Инфаструктура
+        many: Инфаструктура
+        other: Инфаструктура
       lq:
         one: Комплекс
         few: Комплексов
         many: Комплексов
         other: Комплекса
+      parking: 
+        one: Парковка
+        few: Парковка
+        many: Парковка
+        other: Парковка
+      property_type:
+        one: Собственность
+        few: Собственность
+        many: Собственность
+        other: Собственность
+      repair_type:
+        one: Ремонт
+        few: Ремонта
+        many: Ремонтов
+        other: Ремонты
+      room_type:
+        one: Комната
+        few: Комнат
+        many: Комнат
+        other: Комнаты
+      security_type:
+        one: Удобства и безопасность
+        few: Удобства и безопасность
+        many: Удобства и безопасность
+        other: Удобства и безопасность
+      sewage_type:
+        one: Канализация
+        few: Канализация
+        many: Канализация
+        other: Канализация
       street:
         one: Улица
         few: Улиц
         many: Улиц
         other: Улицы
+      territory_object: 
+        one: Придомовая территория
+        few: Придомовая территория
+        many: Придомовая территория
+        other: Придомовая территория 
       user:
         one: Пользователь
         few: Пользователя
         many: Пользователей
         other: Пользователи
+      water_type:
+        one: Водоснабжение
+        few: Водоснабжение
+        many: Водоснабжение
+        other: Водоснабжение
+      windows_type:
+        one: Окно
+        few: Окон
+        many: Окон
+        other: Окна
     attributes:
       admin_user:
         access_token: Ключ доступа
@@ -72,12 +172,114 @@ ru:
         updated_at: Изменено
         latitude: Ширина
         longitude: Долгота
+        deal_type: Тип сделки
+        deal_type_id: Тип сделки
+        city_region: Район
+        traffic_object: Удаленность объекта от
+        traffic_object_distance: Минут
+        lq_name: Название жилого комплекса (ЖК)
+        is_new: Новостройка
+        builder: Застройщик
+        construction_phase: Этап строительства
+        finish_date_quartal: Срок сдачи
+        finish_date_year: Год
+        finished_at: Дом сдан
+        is_flat: Квартира
+        is_flatpart: Доля в квартире
+        is_studio: Студия
+        is_freeplan: Свободная планировка
+        is_smallfamily: Малосемейка
+        room_count: Сколько комнат
+        square: Общая площадь, м2
+        living_area: Жилая, м2
+        kitchen_area: Кухня, м2
+        room_area: Площадь комнат
+        flat_level: Высота потолка
+        room_height: Кол-во уровней квартиры
+        repair_type: Ремонт
+        floor: Этаж
+        total_floor: Этажей в доме
+        room_type: Комнаты
+        property_type: Собственность
+        windows_type: Окна
+        loggia: Лоджия
+        loggia_area: Площадь
+        loggia_window: Застеклена
+        balcony: Балкон
+        balcony_area: Площадь
+        balcony_window: Застеклен
+        pantry: Кладовая комната / гардеробная
+        pantry_area: Площадь
+        sauna: Сауна
+        pool: Бассейн
+        pool_area: Площадь бассейна
+        wc_fused: Санузел слитный
+        separate_bathroom: Санузел раздельный
+        security_types: Удобства и безопасность
+        building_class: Класс здания
+        architectural_style: Архитектурный стиль
+        building_type: Тип здания
+        building_state: Состояние здания
+        elevator: Пассажирский лифт
+        service_elevator: Грузовой лифт
+        garbage_type: Мусороотделение
+        gas_type: Газоснабжение
+        electric_type: Электроснабжение
+        heating_type: Отопление / ГВС
+        water_type: Водоснабжение
+        sewage_type: Канализация
+        territory_objects: Придомовая территория
+        is_fenced: Огорожена
+        parkings: Парковка
+        parking_include: Входит в стоимость объекта?
+        infrastructure_objects: Инфаструктура, в радиусе 5 - 10 минут ходьбы от объекта недвижимости
+        price: Цена
+        is_doc_ready: Все документы к сделке готовы
+        allow_bargaining: Торг
+        allow_brokers: Посредники
+        allow_mortgage: Ипотека
       city:
         name: Название
         created_at: Создано
         updated_at: Изменено
         latitude: Ширина
         longitude: Долгота
+      city_region:
+        name: Название
+        city: Город
+        description: Описание
+        created_at: Создано
+        updated_at: Изменено
+      construction_phase:
+        name: Название
+        description: Описание
+        created_at: Создано
+        updated_at: Изменено
+      deal_type:
+        name: Название
+        description: Описание
+        created_at: Создано
+        updated_at: Изменено
+      electric_type:
+        name: Название
+        description: Описание
+        created_at: Создано
+        updated_at: Изменено
+      heating_type:
+        name: Название
+        description: Описание
+        created_at: Создано
+        updated_at: Изменено
+      garbage_type:
+        name: Название
+        description: Описание
+        created_at: Создано
+        updated_at: Изменено
+      gas_type:
+        name: Название
+        description: Описание
+        created_at: Создано
+        updated_at: Изменено
       house:
         street: Улица
         street_id: Улица
@@ -89,6 +291,11 @@ ru:
         updated_at: Изменено
         latitude: Ширина
         longitude: Долгота
+      infrastructure_object:
+        name: Название
+        description: Описание
+        created_at: Создано
+        updated_at: Изменено
       lq:
         number_code: Номер
         city: Город
@@ -97,6 +304,26 @@ ru:
         updated_at: Изменено
         latitude: Ширина
         longitude: Долгота
+      parking:
+        name: Название
+        description: Описание
+        created_at: Создано
+        updated_at: Изменено
+      repair_type:
+        name: Название
+        description: Описание
+        created_at: Создано
+        updated_at: Изменено
+      security_type:
+        name: Название
+        description: Описание
+        created_at: Создано
+        updated_at: Изменено
+      sewage_type:
+        name: Название
+        description: Описание
+        created_at: Создано
+        updated_at: Изменено
       street:
         name: Название
         city: Город
@@ -105,6 +332,21 @@ ru:
         updated_at: Изменено
         latitude: Ширина
         longitude: Долгота
+      territory_object:
+        name: Название
+        description: Описание
+        created_at: Создано
+        updated_at: Изменено
+      water_type:
+        name: Название
+        description: Описание
+        created_at: Создано
+        updated_at: Изменено
+      windows_type:
+        name: Название
+        description: Описание
+        created_at: Создано
+        updated_at: Изменено
   views:
     pagination:
       first: "&laquo; Первая"

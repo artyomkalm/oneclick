@@ -1,4 +1,4 @@
-class DealType < ActiveRecord::Base
+class BuildingState < ActiveRecord::Base
   has_many :appartments
 
   validates :name, presence: true

@@ -21,6 +21,7 @@ gem 'simple_form'
 
 gem 'gmaps4rails', '~> 2.1', '>= 2.1.2'
 gem 'geocoder', '~> 1.2', '>= 1.2.12'
+gem 'rails2gis'
 
 gem 'russian'
 gem 'devise'

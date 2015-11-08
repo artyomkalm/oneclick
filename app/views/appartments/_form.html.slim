@@ -2,20 +2,150 @@
   = f.error_notification
 
   .form-inputs
-    .row
-      .col-md-6
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Расположение
+      .panel-body
+        .row
+          .col-md-6
+            = f.association :deal_type
+            = f.association :city
+          .col-md-6
+            h4 Тип недвижимости
+        .row
+          .col-md-3
+            = f.association :city_region
+          .col-md-3
+            = f.association :street
+          .col-md-3
+            = f.association :lq
+          .col-md-3
+            = f.association :house
+        .row
+          .col-md-6
+            h4 Укажите местоположение объекта на карте
+            #map style=("width:100%; height:250px;")
+          .col-md-6
+            br
+            .col-md-8
+              = f.association :traffic_object
+            .col-md-4
+              = f.input :traffic_object_distance
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Квартира
+      .panel-body
+        .row
+          .col-md-6
+            = f.input :lq_name
+            = f.input :is_new
+          .col-md-6
+            = f.input :builder
+        .row
+          .col-md-6
+            = f.association :construction_phase
+            
+          .col-md-6
+            .col-md-8
+              = f.input :finish_date_quartal
+            .col-md-4
+              = f.input :finish_date_year
+            = f.input :finished_at, as: :date
+        .row
+          .col-md-6
+            = f.input :is_flat
+            = f.input :is_flatpart
+            = f.input :is_studio
+            = f.input :is_freeplan
+            = f.input :is_smallfamily
+            = f.input :room_count
+            .col-md-4
+              = f.input :square
+            .col-md-4
+              = f.input :living_area
+            .col-md-4
+              = f.input :kitchen_area
+            = f.input :room_area
+            = f.input :flat_level
+            = f.input :room_height
+            = f.association :repair_type
+          .col-md-6
+            = f.input :floor
+            = f.input :total_floor
+            = f.association :room_type
+            = f.association :property_type
+            = f.association :windows_type
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Что есть?
+      .panel-body
+        .col-md-6
+          = f.input :loggia
+          = f.input :loggia_area
+          = f.input :loggia_window
+          = f.input :balcony
+          = f.input :balcony_area
+          = f.input :balcony_window
+          = f.input :pantry
+          = f.input :pantry_area
+          = f.input :sauna
+          = f.input :pool
+          = f.input :pool_area
+          = f.input :wc_fused
+          = f.input :separate_bathroom
+        .col-md-6
+          = f.association :security_types, as: :check_boxes
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Дом
+      .panel-body
+        .col-md-6
+          = f.association :building_class
+          = f.input :architectural_style
+          = f.association :building_type
+          = f.association :building_state
+          = f.input :elevator
+          = f.input :service_elevator
+        .col-md-6
+          = f.association :gas_type
+          = f.association :electric_type
+          = f.association :heating_type
+          = f.association :water_type
+          = f.association :sewage_type
+          = f.association :garbage_type
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Инфраструктура
+      .panel-body
+        .col-md-4
+          = f.association :territory_objects, as: :check_boxes
+          = f.input :is_fenced
+        .col-md-4
+          = f.association :parkings, as: :check_boxes
+          = f.input :parking_include
+        .col-md-4
+          = f.association :infrastructure_objects, as: :check_boxes
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Сделка
+      .panel-body
+        .col-md-6
+          = f.input :price
+          = f.input :is_doc_ready
+        .col-md-6
+          = f.input :allow_bargaining
+          = f.input :allow_brokers
+          = f.input :allow_mortgage
+
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title Временное
+      .panel-body
+
         = f.association :user
-        = f.association :city
-        .form-group.select.optional
-          label.select.optional.control-label  Улица
-          = f.select :street, Street.all.map { |s| [s.name, s.id, { :data => {:lat => s.latitude, :lng => s.longitude} }] }, class: "select optonal form-control"
-        = f.association :lq
-        = f.association :house
         = f.input :latitude
         = f.input :longitude
-      .col-md-6
-        #map style=("width:90%; height:450px;") 
-        #location LatLng(54.0, 82.0)
+  
 
   .form-actions
     = f.button :submit
