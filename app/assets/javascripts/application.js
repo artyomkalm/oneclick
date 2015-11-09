@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require api_2gis
+//= require underscore
+//= require gmaps/google
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets

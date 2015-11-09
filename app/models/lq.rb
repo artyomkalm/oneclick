@@ -4,5 +4,13 @@ class Lq < ActiveRecord::Base
   has_many :houses
 
   validates :number_code, presence: true
+  geocoded_by :full_address
+  after_validation :geocode
+
+  def full_address
+    "#{self.city.name}, #{self.number_code}/1"
+  end
+
+  
 
 end

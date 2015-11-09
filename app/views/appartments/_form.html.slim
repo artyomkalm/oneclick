@@ -16,9 +16,15 @@
           .col-md-3
             = f.association :city_region
           .col-md-3
-            = f.association :street
+            .form-group.select.optional.appartment_street
+              label.select.optional.control-label Улица
+              = f.association :street do
+                = f.select :street_id, Street.all.map{ |s| [s.name, s.id, { 'data-lat' => s.latitude, 'data-lng' => s.longitude } ] }
           .col-md-3
-            = f.association :lq
+            .form-group.select.optional.appartment_lq
+              label.select.optional.control-label Комплекс
+              = f.association :lq do
+                = f.select :lq_id, Lq.all.map{ |l| [l.number_code, l.id, { 'data-lat' => l.latitude, 'data-lng' => l.longitude } ] }          
           .col-md-3
             = f.association :house
         .row
@@ -32,6 +38,8 @@
               = f.association :traffic_object
             .col-md-4
               = f.input :traffic_object_distance
+            = f.input :latitude
+            = f.input :longitude
     .panel.panel-default
       .panel-heading
         h3.panel-title Квартира
@@ -144,8 +152,6 @@
       .panel-body
 
         = f.association :user
-        = f.input :latitude
-        = f.input :longitude
   
 
   .form-actions
