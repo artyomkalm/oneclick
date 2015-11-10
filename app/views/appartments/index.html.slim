@@ -15,11 +15,11 @@ table.table-hover
   tbody
     - @appartments.each do |appartment|
       tr
-        td = appartment.user_id
-        td = appartment.city_id
-        td = appartment.house.number_street
-        td = appartment.house.number_lq
-        td = appartment.number_code
+        td = appartment.user.name
+        td = appartment.city.name
+        td = appartment.street.name
+        td = appartment.lq.number_code
+        td = 
         td = link_to 'Показать', appartment
         td = link_to 'Редактировать', edit_appartment_path(appartment)
         td = link_to 'Удалить', appartment, data: {:confirm => 'Вы уверены?'}, :method => :delete

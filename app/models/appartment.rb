@@ -44,6 +44,5 @@ class Appartment < ActiveRecord::Base
                           :foreign_key => 'appartment_id',
                           :association_foreign_key => 'territory_object_id'
 
-  validates :code_number, presence: true
 
 end
