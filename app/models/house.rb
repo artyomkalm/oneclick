@@ -7,6 +7,6 @@ class House < ActiveRecord::Base
   after_validation :geocode
 
   def full_address
-    "#{self.street.city.name}, #{self.street.name}/#{self.number_lq}"
+    "#{self.street.city.name}, #{self.lq.number_code}/#{self.number_lq}"
   end
 end

@@ -28,7 +28,7 @@ gem 'devise'
 gem 'activeadmin', '~> 1.0.0.pre2'
 
 gem 'rename'
-# gem 'roo'
+gem 'roo'
 
 # gem 'bcrypt', '~> 3.1.7'
 
