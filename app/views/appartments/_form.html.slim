@@ -27,7 +27,7 @@
                 = f.select :lq_id, Lq.all.map{ |l| [l.number_code, l.id, { 'data-lat' => l.latitude, 'data-lng' => l.longitude } ] }          
           .col-md-3
             = f.association :house do
-                = f.select :house_id, House.all.map{ |h| [h.number_lq, h.id, { 'data-lat' => l.latitude, 'data-lng' => l.longitude } ] }
+                = f.select :house_id, House.all.map{ |h| [h.number_lq, h.id, { 'data-lat' => h.latitude, 'data-lng' => h.longitude } ] }
         .row
           .col-md-6
             h4 Укажите местоположение объекта на карте
