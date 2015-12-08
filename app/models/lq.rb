@@ -1,6 +1,7 @@
 class Lq < ActiveRecord::Base
 
   belongs_to :city
+  belongs_to :city_region
   has_many :houses
 
   validates :number_code, presence: true
