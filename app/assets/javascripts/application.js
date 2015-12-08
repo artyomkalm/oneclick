@@ -16,6 +16,7 @@
 //= require gmaps/google
 //= require jquery_ujs
 //= require turbolinks
+//= require selectboxes
 //= require bootstrap-sprockets
 //= require_tree .
 

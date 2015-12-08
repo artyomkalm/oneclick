@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   resources :streets
   resources :cities
   resources :appartments
+
+  get :get_lqs_by_city_region, to: 'appartments#get_lqs_by_city_region'
+  get :get_houses_by_lq, to: 'appartments#get_houses_by_lq'
+  get :get_street_address, to: 'appartments#get_street_address'
+  
   get 'main/index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config

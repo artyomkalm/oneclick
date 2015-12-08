@@ -16,11 +16,6 @@
           .col-md-3
             = f.association :city_region
           .col-md-3
-            .form-group.select.optional.appartment_street
-              label.select.optional.control-label Улица
-              = f.association :street do
-                = f.select :street_id, Street.all.map{ |s| [s.name, s.id, { 'data-lat' => s.latitude, 'data-lng' => s.longitude } ] }
-          .col-md-3
             .form-group.select.optional.appartment_lq
               label.select.optional.control-label Комплекс
               = f.association :lq do
@@ -30,6 +25,8 @@
               label.select.optional.control-label Дом
               = f.association :house do
                 = f.select :house_id, House.all.map{ |h| [h.number_lq, h.id, { 'data-lat' => h.latitude, 'data-lng' => h.longitude } ] }
+          .col-md-3
+            h5#street
         .row
           .col-md-6
             h4 Укажите местоположение объекта на карте

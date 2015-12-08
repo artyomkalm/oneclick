@@ -1,29 +1,21 @@
 h1 Квартиры
-
-table.table-hover
-  thead
-    tr
-      th Пользователь
-      th Город
-      th Улица
-      th Комплекс
-      th Номер
-      th
-      th
-      th
-
-  tbody
-    - @appartments.each do |appartment|
-      tr
-        td = appartment.user.name
-        td = appartment.city.name
-        td = appartment.street.name
-        td = appartment.lq.number_code
-        td = 
-        td = link_to 'Показать', appartment
-        td = link_to 'Редактировать', edit_appartment_path(appartment)
-        td = link_to 'Удалить', appartment, data: {:confirm => 'Вы уверены?'}, :method => :delete
-
 br
-
 = link_to 'Добавить новую', new_appartment_path
+.row
+  .col-md-6  
+    - @appartments.each do |appartment|
+      .panel.panel-default
+        .panel-heading= "#{appartment.lq.number_code}/#{appartment.house.number_lq}"
+        .panel-body
+          .appartment_data{data={:lat=>appartment.latitude, :lng=>appartment.longitude}}
+          ul.list-group
+            li.list-group-item= link_to 'Показать', appartment
+            li.list-group-item= link_to 'Редактировать', edit_appartment_path(appartment)
+            li.list-group-item= link_to 'Удалить', appartment, data: {:confirm => 'Вы уверены?'}, :method => :delete
+
+  .col-md-6
+    div style=("width:100%;")
+      #map style=("width:100%; height:700px;")
+
+javascript:
+  | markers = handler.addMarkers(<%=raw @hash.to_json %>);

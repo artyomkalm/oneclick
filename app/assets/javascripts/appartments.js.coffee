@@ -55,13 +55,12 @@ $ ->
       placeMarker event.latLng
       updateFormLocation event.latLng
 
-  $('#appartment_street_id').change ->
-    curLat = $(this.selectedOptions[0]).data('lat')
-    curLng = $(this.selectedOptions[0]).data('lng')
-    clearOverlays()
-    setMarker(curLat, curLng)
-    $('#appartment_latitude').val curLat
-    $('#appartment_longitude').val curLng
+  $('#appartment_city_region_id').change ->
+    url = '/get_lqs_by_city_region?city_region_id=' + $(this).val()
+    $('#appartment_lq_id').removeOption /./
+    $.get url, (data) ->
+      data.forEach (a) -> 
+        $('#appartment_lq_id').append(a)
 
   $('#appartment_lq_id').change ->
     curLat = $(this.selectedOptions[0]).data('lat')
@@ -70,6 +69,11 @@ $ ->
     setMarker(curLat, curLng)
     $('#appartment_latitude').val curLat
     $('#appartment_longitude').val curLng
+    url = '/get_houses_by_lq?lq_id=' + $(this).val()
+    $('#appartment_house_id').removeOption /./
+    $.get url, (data) ->
+      data.forEach (a) -> 
+        $('#appartment_house_id').append(a)
 
   $('#appartment_house_id').change ->
     curLat = $(this.selectedOptions[0]).data('lat')
@@ -78,6 +82,10 @@ $ ->
     setMarker(curLat, curLng)
     $('#appartment_latitude').val curLat
     $('#appartment_longitude').val curLng
+    url = '/get_street_address?house_id=' + $(this).val()
+    $.get url, (data) ->
+      console.log data
+      $('h5#street').text(data)
 
   setMarker = (curLat, curLng) ->
     marker = handler.addMarker({
