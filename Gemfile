@@ -34,6 +34,8 @@ gem 'rename'
 
 gem 'puma'
 
+gem "rails_12factor", group: :production
+
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
@@ -47,3 +49,5 @@ group :development do
   gem 'capistrano-puma', :require => false
   gem 'capistrano-precompile-on-local'
 end
+
+ruby "2.0.0"
