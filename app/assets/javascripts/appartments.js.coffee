@@ -63,7 +63,15 @@ $ ->
     $('#appartment_latitude').val curLat
     $('#appartment_longitude').val curLng
 
-   $('#appartment_lq_id').change ->
+  $('#appartment_lq_id').change ->
+    curLat = $(this.selectedOptions[0]).data('lat')
+    curLng = $(this.selectedOptions[0]).data('lng')
+    clearOverlays()
+    setMarker(curLat, curLng)
+    $('#appartment_latitude').val curLat
+    $('#appartment_longitude').val curLng
+
+  $('#appartment_house_id').change ->
     curLat = $(this.selectedOptions[0]).data('lat')
     curLng = $(this.selectedOptions[0]).data('lng')
     clearOverlays()

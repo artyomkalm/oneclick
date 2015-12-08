@@ -26,7 +26,9 @@
               = f.association :lq do
                 = f.select :lq_id, Lq.all.map{ |l| [l.number_code, l.id, { 'data-lat' => l.latitude, 'data-lng' => l.longitude } ] }          
           .col-md-3
-            = f.association :house do
+            .form-group.select.optional.appartment_house
+              label.select.optional.control-label Дом
+              = f.association :house do
                 = f.select :house_id, House.all.map{ |h| [h.number_lq, h.id, { 'data-lat' => h.latitude, 'data-lng' => h.longitude } ] }
         .row
           .col-md-6
