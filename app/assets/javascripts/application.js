@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require api_2gis
+//= require select2
 //= require underscore
 //= require gmaps/google
 //= require jquery_ujs

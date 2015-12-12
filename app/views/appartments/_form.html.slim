@@ -8,38 +8,34 @@
       .panel-body
         .row
           .col-md-6
-            = f.association :deal_type
-            = f.association :city
-          .col-md-6
-            h4 Тип недвижимости
-        .row
-          .col-md-3
-            = f.association :city_region
-          .col-md-3
-            .form-group.select.optional.appartment_lq
-              label.select.optional.control-label Комплекс
-              = f.association :lq do
-                = f.select :lq_id, Lq.all.map{ |l| [l.number_code, l.id, { 'data-lat' => l.latitude, 'data-lng' => l.longitude } ] }          
-          .col-md-3
-            .form-group.select.optional.appartment_house
-              label.select.optional.control-label Дом
-              = f.association :house do
-                = f.select :house_id, House.all.map{ |h| [h.number_lq, h.id, { 'data-lat' => h.latitude, 'data-lng' => h.longitude } ] }
-          .col-md-3
-            h5#street
-        .row
-          .col-md-6
-            h4 Укажите местоположение объекта на карте
-            div style=("width:100%;")
-              #map style=("width:100%; height:250px;")
-          .col-md-6
-            br
-            .col-md-8
-              = f.association :traffic_object
-            .col-md-4
+            = f.association :deal_type, input_html: { class: 'select_2' }
+            = f.association :city, input_html: { class: 'select_2' }
+            .row
+              .col-md-6
+                = f.association :city_region
+              .col-md-6
+                .form-group.select.optional.appartment_lq
+                  label.select.optional.control-label Комплекс
+                  = f.association :lq do
+                    = f.select :lq_id, Lq.all.map{ |l| [l.number_code, l.id, { 'data-lat' => l.latitude, 'data-lng' => l.longitude } ] }
+            .row          
+              .col-md-6
+                .form-group.select.optional.appartment_house
+                  label.select.optional.control-label Дом
+                  = f.association :house do
+                    = f.select :house_id, House.all.map{ |h| [h.number_lq, h.id, { 'data-lat' => h.latitude, 'data-lng' => h.longitude } ] }
+              .col-md-6
+                h5#street
+            .col-md-6
+              = f.association :traffic_object, input_html: { class: 'select_2' }
+            .col-md-6
               = f.input :traffic_object_distance
             = f.input :latitude
             = f.input :longitude
+          .col-md-6
+            h4 Укажите местоположение объекта на карте
+            div style=("width:100%;")
+              #map style=("width:100%; height:500px;")
     .panel.panel-default
       .panel-heading
         h3.panel-title Квартира
@@ -52,7 +48,7 @@
             = f.input :builder
         .row
           .col-md-6
-            = f.association :construction_phase
+            = f.association :construction_phase, input_html: { class: 'select_2' }
             
           .col-md-6
             .col-md-8
@@ -77,13 +73,13 @@
             = f.input :room_area
             = f.input :flat_level
             = f.input :room_height
-            = f.association :repair_type
+            = f.association :repair_type, input_html: { class: 'select_2' }
           .col-md-6
             = f.input :floor
             = f.input :total_floor
-            = f.association :room_type
-            = f.association :property_type
-            = f.association :windows_type
+            = f.association :room_type, input_html: { class: 'select_2' }
+            = f.association :property_type, input_html: { class: 'select_2' }
+            = f.association :windows_type, input_html: { class: 'select_2' }
     .panel.panel-default
       .panel-heading
         h3.panel-title Что есть?
@@ -109,19 +105,19 @@
         h3.panel-title Дом
       .panel-body
         .col-md-6
-          = f.association :building_class
+          = f.association :building_class, input_html: { class: 'select_2' }
           = f.input :architectural_style
-          = f.association :building_type
-          = f.association :building_state
+          = f.association :building_type, input_html: { class: 'select_2' }
+          = f.association :building_state, input_html: { class: 'select_2' }
           = f.input :elevator
           = f.input :service_elevator
         .col-md-6
-          = f.association :gas_type
-          = f.association :electric_type
-          = f.association :heating_type
-          = f.association :water_type
-          = f.association :sewage_type
-          = f.association :garbage_type
+          = f.association :gas_type, input_html: { class: 'select_2' }
+          = f.association :electric_type, input_html: { class: 'select_2' }
+          = f.association :heating_type, input_html: { class: 'select_2' }
+          = f.association :water_type, input_html: { class: 'select_2' }
+          = f.association :sewage_type, input_html: { class: 'select_2' }
+          = f.association :garbage_type, input_html: { class: 'select_2' }
     .panel.panel-default
       .panel-heading
         h3.panel-title Инфраструктура
@@ -151,7 +147,7 @@
         h3.panel-title Временное
       .panel-body
 
-        = f.association :user
+        = f.association :user, input_html: { class: 'select_2' }
   
 
   .form-actions

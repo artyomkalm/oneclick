@@ -54,6 +54,23 @@ $ ->
       clearOverlays()
       placeMarker event.latLng
       updateFormLocation event.latLng
+  
+  $("#appartment_city_region_id").select2
+    placeholder: "Выберите район",
+    theme: "bootstrap"
+  $("#appartment_lq_id").select2
+    placeholder: "Выберите комплекс"
+    theme: "bootstrap",
+    allowClear: true
+  $("#appartment_house_id").select2
+    placeholder: "Выберите дом",
+    theme: "bootstrap",
+    allowClear: true
+  $(".select_2").select2
+    placeholder: "Выберите значение",
+    theme: "bootstrap",
+    allowClear: true
+
 
   $('#appartment_city_region_id').change ->
     url = '/get_lqs_by_city_region?city_region_id=' + $(this).val()
