@@ -1,21 +1,27 @@
 h1 Квартиры
 br
 = link_to 'Добавить новую', new_appartment_path
+
 .row
-  .col-md-6  
-    - @appartments.each do |appartment|
-      .panel.panel-default
-        .panel-heading= "#{appartment.lq.number_code}/#{appartment.house.number_lq}"
-        .panel-body
-          .appartment_data{data={:lat=>appartment.latitude, :lng=>appartment.longitude}}
-          ul.list-group
-            li.list-group-item= link_to 'Показать', appartment
-            li.list-group-item= link_to 'Редактировать', edit_appartment_path(appartment)
-            li.list-group-item= link_to 'Удалить', appartment, data: {:confirm => 'Вы уверены?'}, :method => :delete
+  .col-md-6
+    .media
+      - @appartments.each do |appartment|
+        .media-left
+          = image_tag("test", class: "media-object")
+        .media-body
+          h4.media-heading= "#{appartment.lq.number_code}/#{appartment.house.number_lq} - #{appartment.try(:number)}"
+          para= appartment.deal_type.try(:name)
+          para "Квартира очень светлая, уютная, чистая с евроремонтом (ремонту 5 лет) и перепланировкой (документ на разрешение имеется). на полу везде ламинат"
+          .row
+            .col-md-3
+              = link_to 'Показать', appartment
+            .col-md-5
+              = link_to 'Редактировать', edit_appartment_path(appartment)
+            .col-md-4
+              = link_to 'Удалить', appartment, data: {:confirm => 'Вы уверены?'}, :method => :delete
 
   .col-md-6
     div style=("width:100%;")
       #map style=("width:100%; height:700px;")
 
-javascript:
-  | markers = handler.addMarkers(<%=raw @hash.to_json %>);
+#all-apps{data={:list => @hash.to_json}}

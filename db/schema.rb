@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151212194709) do
+ActiveRecord::Schema.define(version: 20151212212736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -162,6 +162,7 @@ ActiveRecord::Schema.define(version: 20151212194709) do
     t.integer  "floor"
     t.integer  "windows_type_id"
     t.integer  "building_state_id"
+    t.string   "number"
   end
 
   create_table "building_classes", force: :cascade do |t|

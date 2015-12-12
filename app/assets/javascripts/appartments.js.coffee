@@ -114,3 +114,12 @@ $ ->
     # Set and open infowindow
     google.maps.event.trigger marker.getServiceObject(), 'click'
     listenToDragDrop marker
+
+$ ->
+  if $('#all-apps').data('list')
+    $('#all-apps').data('list').forEach (l) ->
+      marker = handler.addMarker({
+        lat: l.lat
+        lng: l.lng
+      }, markers_options)
+      Gmaps.markers.push marker

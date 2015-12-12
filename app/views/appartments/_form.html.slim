@@ -19,12 +19,14 @@
                   = f.association :lq do
                     = f.select :lq_id, Lq.all.map{ |l| [l.number_code, l.id, { 'data-lat' => l.latitude, 'data-lng' => l.longitude } ] }
             .row          
-              .col-md-6
+              .col-md-4
                 .form-group.select.optional.appartment_house
                   label.select.optional.control-label Дом
                   = f.association :house do
                     = f.select :house_id, House.all.map{ |h| [h.number_lq, h.id, { 'data-lat' => h.latitude, 'data-lng' => h.longitude } ] }
-              .col-md-6
+              .col-md-4
+                = f.input :number
+              .col-md-4
                 h5#street
             .col-md-6
               = f.association :traffic_object, input_html: { class: 'select_2' }
