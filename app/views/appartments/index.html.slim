@@ -4,10 +4,10 @@ br
 
 .row
   .col-md-6
-    .media
-      - @appartments.each do |appartment|
+    - @appartments.each do |appartment|
+      .media
         .media-left
-          = image_tag("test", class: "media-object")
+          = image_tag("test.jpg", class: "media-object")
         .media-body
           h4.media-heading= "#{appartment.lq.number_code}/#{appartment.house.number_lq} - #{appartment.try(:c_number)}"
           para= appartment.deal_type.try(:name)
