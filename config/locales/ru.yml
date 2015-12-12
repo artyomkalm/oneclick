@@ -244,7 +244,7 @@ ru:
         allow_bargaining: Торг
         allow_brokers: Посредники
         allow_mortgage: Ипотека
-        number: Номер
+        c_number: Номер
       city:
         name: Название
         created_at: Создано
