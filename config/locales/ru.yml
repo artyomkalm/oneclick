@@ -220,7 +220,8 @@ ru:
         pool_area: Площадь бассейна
         wc_fused: Санузел слитный
         separate_bathroom: Санузел раздельный
-        security_types: Удобства и безопасность
+        goods_types: В наличии
+        security_types: Безопасность объекта
         building_class: Класс здания
         architectural_style: Архитектурный стиль
         building_type: Тип здания
