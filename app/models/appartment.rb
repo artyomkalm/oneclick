@@ -23,6 +23,11 @@ class Appartment < ActiveRecord::Base
   belongs_to :building_state
 
 
+  has_and_belongs_to_many :goods_types,
+                          :class_name => 'GoodsType',
+                          :join_table => 'appartment_goods_types',
+                          :foreign_key => 'appartment_id',
+                          :association_foreign_key => 'goods_type_id'  
   has_and_belongs_to_many :infrastructure_objects,
                           :class_name => 'InfrastructureObject',
                           :join_table => 'appartment_infrastructure_objects',

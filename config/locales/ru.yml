@@ -76,6 +76,11 @@ ru:
         few: Газоснабжение
         many: Газоснабжение
         other: Газоснабжение
+      goods_type:
+        one: В наличии
+        few: В наличии
+        many: В наличии
+        other: В наличии
       heating_type:
         one: Отопление / ГВС
         few: Отопление / ГВС
@@ -276,6 +281,11 @@ ru:
         created_at: Создано
         updated_at: Изменено
       gas_type:
+        name: Название
+        description: Описание
+        created_at: Создано
+        updated_at: Изменено
+      goods_type:
         name: Название
         description: Описание
         created_at: Создано

@@ -99,6 +99,7 @@
           = f.input :wc_fused
           = f.input :separate_bathroom
         .col-md-6
+          = f.association :goods_types, as: :check_boxes
           = f.association :security_types, as: :check_boxes
     .panel.panel-default
       .panel-heading

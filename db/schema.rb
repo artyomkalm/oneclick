@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208124233) do
+ActiveRecord::Schema.define(version: 20151212194709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,14 @@ ActiveRecord::Schema.define(version: 20151208124233) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "appartment_goods_types", id: false, force: :cascade do |t|
+    t.integer "appartment_id"
+    t.integer "goods_type_id"
+  end
+
+  add_index "appartment_goods_types", ["appartment_id"], name: "index_appartment_goods_types_on_appartment_id", using: :btree
+  add_index "appartment_goods_types", ["goods_type_id"], name: "index_appartment_goods_types_on_goods_type_id", using: :btree
 
   create_table "appartment_infrastructure_objects", id: false, force: :cascade do |t|
     t.integer "appartment_id"
@@ -226,6 +234,13 @@ ActiveRecord::Schema.define(version: 20151208124233) do
   end
 
   create_table "gas_types", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "goods_types", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at",  null: false
