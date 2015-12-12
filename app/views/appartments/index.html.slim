@@ -9,7 +9,7 @@ br
         .media-left
           = image_tag("test", class: "media-object")
         .media-body
-          h4.media-heading= "#{appartment.lq.number_code}/#{appartment.house.number_lq} - #{appartment.try(:number)}"
+          h4.media-heading= "#{appartment.lq.number_code}/#{appartment.house.number_lq} - #{appartment.try(:c_number)}"
           para= appartment.deal_type.try(:name)
           para "Квартира очень светлая, уютная, чистая с евроремонтом (ремонту 5 лет) и перепланировкой (документ на разрешение имеется). на полу везде ламинат"
           .row

@@ -25,7 +25,7 @@
                   = f.association :house do
                     = f.select :house_id, House.all.map{ |h| [h.number_lq, h.id, { 'data-lat' => h.latitude, 'data-lng' => h.longitude } ] }
               .col-md-4
-                = f.input :number
+                = f.input :c_number
               .col-md-4
                 h5#street
             .col-md-6
