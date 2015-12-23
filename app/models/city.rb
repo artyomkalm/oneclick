@@ -3,6 +3,7 @@ class City < ActiveRecord::Base
   validates :name, presence: true
   geocoded_by :name
   after_validation :geocode
+  has_many :city_regions
 
 
   def self.get_list
